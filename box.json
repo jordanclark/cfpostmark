@@ -1,0 +1,40 @@
+{
+    "name":"cfpostmark",
+    "slug":"cfpostmark",
+    "version":"0.5.0",
+    "author":"Jordan Clark <jordanclark@gmail.com>",
+    "keywords":[
+        "postmark",
+		"postmarkapp",
+        "email",
+        "smtp",
+        "api",
+        "rest"
+    ],
+    "shortDescription":"API client for PostmarkApp.com",
+    "type":"modules",
+    "location":"jordanclark/cfpostmark#v0.5.0",
+    "repository":{
+        "URL":"https://github.com/jordanclark/cfpostmark.git",
+        "type":"GIT"
+    },
+    "homepage":"https://github.com/jordanclark/cfpostmark",
+    "bugs":"https://github.com/jordanclark/cfpostmark/issues",
+    "license":[
+        {
+            "type":"Apache-2.0",
+            "URL":"https://github.com/jordanclark/cfpostmark/blob/master/LICENSE"
+        }
+    ],
+    "private":false,
+    "ignore":[
+        "**/.*",
+        "/test/",
+        "/tests/"
+    ],
+    "scripts":{
+        "postVersion":"package set location='jordanclark/cfpostmark#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push --follow-tags"
+    }
+}
