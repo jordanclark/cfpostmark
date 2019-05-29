@@ -1,7 +1,7 @@
 {
     "name":"cfpostmark",
     "slug":"cfpostmark",
-    "version":"0.5.2",
+    "version":"0.5.3",
     "author":"Jordan Clark <jordanclark@gmail.com>",
     "keywords":[
         "postmark",
@@ -13,7 +13,7 @@
     ],
     "shortDescription":"API client for PostmarkApp.com",
     "type":"modules",
-    "location":"jordanclark/cfpostmark#v0.5.2",
+    "location":"jordanclark/cfpostmark#v0.5.3",
     "repository":{
         "URL":"https://github.com/jordanclark/cfpostmark.git",
         "type":"GIT"
