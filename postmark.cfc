@@ -7,16 +7,13 @@ component {
 	,	string defaultReplyTo= ""
 	,	string defaultBCC= ""
 	,	boolean compress= false
-	,	boolean debug= false
 	,	numeric httpTimeOut= 120
+	,	boolean debug= ( request.debug ?: false )
 	) {
 		this.apiUrl= "https://api.postmarkapp.com/";
 		this.httpTimeOut= arguments.httpTimeOut;
 		this.compress= arguments.compress;
 		this.debug= arguments.debug;
-		if ( structKeyExists( request, "debug" ) && request.debug == true ) {
-			this.debug= request.debug;
-		}
 		this.addRack(
 			rack= "default"
 		,	apiKey= arguments.apiKey
