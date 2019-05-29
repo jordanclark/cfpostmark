@@ -319,14 +319,9 @@ component {
 			}
 		}
 		out.response= toString( http.fileContent );
-		//  RESPONSE CODE ERRORS 
-		if ( !structKeyExists( http, "responseHeader" ) || !structKeyExists( http.responseHeader, "Status_Code" ) ) {
-			out.error= "No response header returned";
-		} else {
-			out.statusCode= http.responseHeader[ "Status_Code" ];
-		}
-		this.debugLog( out.response );
-		//  RESPONSE CODE ERRORS 
+		//this.debugLog( out.response );
+		out.statusCode = http.responseHeader.Status_Code ?: 500;
+		this.debugLog( out.statusCode );
 		if ( out.statusCode == "401" ) {
 			out.error= "401 unauthorized";
 		} else if ( out.statusCode == "422" ) {

@@ -1,4 +1,4 @@
-# postmark
+# cfpostmark
 PostmarkApp.com ColdFusion Rest API Client
 
 # Changes
