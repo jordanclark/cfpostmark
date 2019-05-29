@@ -9,9 +9,13 @@
 # cfpostmark
 PostmarkApp.com ColdFusion Rest API Client
 
-# Changes
-2019-05-29 Initial release
+## To Install
+Run the following from commandbox:
+`box install cfpostmark`
 
-# API documentation
+## Changes
+2019-05-29 Open source release
+
+## API documentation
 https://postmarkapp.com/developer/api/overview
 
