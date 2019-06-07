@@ -347,7 +347,7 @@ component {
 					out.error= "Non-JSON Response: #out.response#";
 				}
 			} catch (any cfcatch) {
-				out.error= "JSON Error: " & cfcatch.message;
+				out.error= "JSON Error: " & cfcatch.message & " " & cfcatch.detail;
 			}
 		}
 		if ( len( out.error ) ) {
