@@ -321,7 +321,6 @@ component {
 		out.response= toString( http.fileContent );
 		//this.debugLog( out.response );
 		out.statusCode = http.responseHeader.Status_Code ?: 500;
-		this.debugLog( out.statusCode );
 		if ( out.statusCode == "401" ) {
 			out.error= "401 unauthorized";
 		} else if ( out.statusCode == "422" ) {
@@ -353,6 +352,7 @@ component {
 		if ( len( out.error ) ) {
 			out.success= false;
 		}
+		this.debugLog( out.statusCode & " " & out.error );
 		return out;
 	}
 
