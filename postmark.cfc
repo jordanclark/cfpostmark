@@ -296,7 +296,7 @@ component {
 		var out= {
 			success= false
 		,	verb= "GET"
-		,	url= this.apiUrl&arguments.uri
+		,	url= this.apiUrl & arguments.uri
 		,	error= ""
 		,	status= ""
 		,	statusCode= 0
@@ -309,14 +309,14 @@ component {
 		}
 		for ( item in arguments ) {
 			if ( len( arguments[ item ] ) && item != "json" ) {
-				requestUri &= ( find( "?", requestUri ) ? "&" : "?" ) & lCase( item ) & "=" & urlEncodedFormat( arguments[ item ] );
+				out.url &= ( find( "?", out.url ) ? "&" : "?" ) & lCase( item ) & "=" & urlEncodedFormat( arguments[ item ] );
 			}
 		}
-		this.debugLog( "POSTMARK: #out.verb# #requestUri#" );
+		this.debugLog( "POSTMARK: #out.verb# #out.url#" );
 		if ( this.debug ) {
 			this.debugLog( duplicate( arguments ) );
 		}
-		cfhttp( result="http", method=out.verb, url=requestUri charset="utf-8", throwOnError=false, timeOut=this.httpTimeOut ) {
+		cfhttp( result="http", method=out.verb, url=out.url, charset="utf-8", throwOnError=false, timeOut=this.httpTimeOut ) {
 			cfhttpparam( name="Accept", type="header", value="application/json" );
 			cfhttpparam( name="Content-Type", type="header", value="application/json" );
 			cfhttpparam( name="X-Postmark-Server-Token", type="header", value=thisRack.apiKey );
