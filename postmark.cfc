@@ -8,8 +8,9 @@ component {
 	,	string defaultBCC= ""
 	,	boolean compress= false
 	,	numeric httpTimeOut= 120
-	,	boolean debug= ( request.debug ?: false )
+	,	boolean debug
 	) {
+		arguments.debug = ( arguments.debug ?: request.debug ?: false );
 		this.apiUrl= "https://api.postmarkapp.com/";
 		this.httpTimeOut= arguments.httpTimeOut;
 		this.compress= arguments.compress;
@@ -62,7 +63,12 @@ component {
 				request.log( arguments.input );
 			}
 		} else if( this.debug ) {
-			cftrace( text=( isSimpleValue( arguments.input ) ? arguments.input : "" ), var=arguments.input, category="Postmark", type="information" );
+			var info= ( isSimpleValue( arguments.input ) ? arguments.input : serializeJson( arguments.input ) );
+			cftrace(
+				var= "info"
+			,	category= "Postmark"
+			,	type= "information"
+			);
 		}
 		return;
 	}
