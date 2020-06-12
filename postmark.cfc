@@ -129,7 +129,7 @@ component {
 		if ( thisRack.compress ) {
 			args[ "HtmlBody" ]= this.htmlCompressFormat( args.HtmlBody );
 		}
-		json= serializeJSON( args );
+		json= serializeJSON( args, false, false );
 		this.debugLog( "!!Send mail with postmark to #arguments.mail.to#" );
 		this.debugLog( args );
 		if ( arguments.send ) {
